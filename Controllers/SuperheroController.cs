@@ -19,10 +19,10 @@ namespace Supers.Controllers
             superhero = new SuperHero();
             
         }
-        // GET: Superhero
+        // GET: Superhero list
         public ActionResult Index()
         {
-            return View();
+            return View(db.SuperHeroes.ToList());
         }
 
         // GET: Superhero/Details/5
