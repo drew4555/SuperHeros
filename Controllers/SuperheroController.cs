@@ -19,6 +19,10 @@ namespace Supers.Controllers
             superhero = new SuperHero();
             
         }
+        public ActionResult Home()
+        {
+            return View();
+        }
         // GET: Superhero list
         public ActionResult Index()
         {
@@ -37,7 +41,18 @@ namespace Supers.Controllers
         {
             return View();
         }
-
+        [HttpPost]
+        public ActionResult DirectHome()
+        {
+            try
+            {
+                return RedirectToAction("Home");
+            }
+            catch
+            {
+                return View();
+            }
+        }
         // POST: Superhero/Create
         [HttpPost]
         public ActionResult Create(SuperHero superHero)
